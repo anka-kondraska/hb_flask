@@ -32,11 +32,11 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliments = sample(AWESOMENESS, 3)
 
     return render_template("compliment.html",
                            person=player,
-                           compliment=compliment)
+                           compliments=compliments)
 
 @app.route('/game')
 def show_madlib_form():
@@ -66,12 +66,13 @@ def show_madlib():
 
     feeling = request.args.getlist("feeling")
 
+
     if feeling:
         feelings = feeling
     else: 
         feelings = []
 
-    return render_template("madlib.html", 
+    return render_template(choice(["madlib1.html","madlib2.html"]), 
             person=isperson, color=color,
             noun=noun, adjective=adjective, animal=animal,
             feelings = feelings) 
