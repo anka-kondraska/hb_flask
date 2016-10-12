@@ -7,11 +7,24 @@
     Hi {{ person }}!
     <br>
     <form action="/madlib"> 
-        Person?<input type="text" name="person">
-        Color<input type="text" name="color">
-        A Noun<input type="text" name="noun">
-        An Adjective<input type="text" name="adjective">
+        <p>Person? <input type="text" name="person"></p>
+        <p>Color <input type="text" name="color"></p>
+        <p>A Noun <input type="text" name="noun"></p>
+        <p>An Adjective <input type="text" name="adjective"></p>
         <br>
+        Choose an animal:
+        <select name="animal">
+            <p><option value="dog">Dog</option></p>
+            <p><option value="cat">Cat</option></p>
+            <p><option value="horse">Horse</option></p>
+            <p><option value="turtle">Turtle</option></p>
+        </select>
+        <br>
+        <p>Happy? <input type="checkbox" name="feeling" value="happy"></p>
+        <p>Grumpy? <input type="checkbox" name="feeling" value="grumpy"></p>
+        <p>Sad? <input type="checkbox" name="feeling" value="sad"></p>
+        <p>Mystical? <input type="checkbox" name="feeling" value="mystical"></p>
+
         <input type="submit">
     </form>
     

@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, sample
 
 from flask import Flask, render_template, request
 
@@ -62,9 +62,19 @@ def show_madlib():
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
 
+    animal = request.args.get("animal")
+
+    feeling = request.args.getlist("feeling")
+
+    if feeling:
+        feelings = feeling
+    else: 
+        feelings = []
+
     return render_template("madlib.html", 
             person=isperson, color=color,
-            noun=noun, adjective=adjective) 
+            noun=noun, adjective=adjective, animal=animal,
+            feelings = feelings) 
 
 
 if __name__ == '__main__':
